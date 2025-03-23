@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/alouanemed/regional-anomaly-mapreduce/assets/morocco_health_banner.png" alt="Moroccan Health Data Anomaly Detection" width="600">
+  
+  <img src="https://raw.githubusercontent.com/alouanemed/regional-anomaly-mapreduce/refs/heads/master/assets/morocco_health_banner.png" alt="Moroccan Health Data Anomaly Detection" width="600">
   <h1><samp>🔍 Regional Anomaly Detection in Moroccan Public Health Data using MapReduce</samp></h1>
   <p>
     <samp> Detecete patterns and anomalies within the Moroccan healthcare landscape with Hadoop MapReduce</samp>
@@ -73,10 +74,18 @@ Ensure you have the following installed and configured:
 
 ### <samp>Setup</samp>
 
-1.  **Clone the Repository:**
+1.  **Clone the Repository, setup HDFS and create appropriate users and then run the script:**
     ```bash
-    git clone <repository_url>
-    cd <repository_directory>
+    git clone https://github.com/alouanemed/regional-anomaly-mapreduce
+    cd regional-anomaly-mapreduce
+  
+    ./run_anomaly_pipeline.sh \
+      /user/alouanemedx/phase1_input \
+      /user/alouanemedx/phase1_output \
+      /user/alouanemedx/phase2_input \
+      /user/alouanemedx/phase2_output \
+      /user/alouanemedx/phase3_output \
+      /user/alouanemedx/phase1_output/part-r-00000
     ```
 2.  **Data Ingestion:** The enriched dataset (as described in the report) should be uploaded to HDFS. Refer to section **1.6.8 Ingestion dans HDFS** of the project report for the specific HDFS paths.
 3.  **MapReduce Jobs:** The MapReduce jobs (for each phase of the pipeline) need to be compiled and available in your Hadoop environment.
